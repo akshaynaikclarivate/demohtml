@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulmonary Sarcoidosis Qualitative Interview Study: Screener</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="email"], select, textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .hidden {
+            display: none;
+        }
+        .screen-out-message, .eligible-message {
+            color: purple;
+        }
+    </style>
+    <script>
+        function showNextQuestion(currentQuestion, nextQuestion) {
+            document.getElementById(currentQuestion).classList.add('hidden');
+            document.getElementById(nextQuestion).classList.remove('hidden');
+        }
+
+        function screenOut(message) {
+            document.getElementById('survey-form').classList.add('hidden');
+            document.getElementById('screen-out-message').innerHTML = `<p><b>${message}</b></p>`;
+            document.getElementById('screen-out-message').classList.remove('hidden');
+        }
+
+        function eligibleToParticipate() {
+            document.getElementById('survey-form').classList.add('hidden');
+            document.getElementById('eligible-message').classList.remove('hidden');
+        }
+
+        function checkEligibility() {
+            const scores = [
+                parseInt(document.querySelector('input[name="q9a"]:checked').value),
+                parseInt(document.querySelector('input[name="q9b"]:checked').value),
+                parseInt(document.querySelector('input[name="q9c"]:checked').value),
+                parseInt(document.querySelector('input[name="q9d"]:checked').value),
+                parseInt(document.querySelector('input[name="q9e"]:checked').value),
+                parseInt(document.querySelector('input[name="q9f"]:checked').value)
+            ];
+            const totalScore = scores.reduce((a, b) => a + b, 0);
+            if (totalScore >= 6 && totalScore <= 33) {
+                showNextQuestion('q9', 'q10');
+            } else {
+                screenOut("Unfortunately you are not eligible to take part in this study.<br><br> If you have time, please let Clarivate know that you were not eligible due to <u>your KSQ-L score</u>.<br><br> We are sorry that you can't take part this time.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2><center>Pulmonary Sarcoidosis Interview Study: Screener</center></h2>
+        <p><center>Thank you for your interest in our study!<br> Please complete the questions below to find out if you are eligible to take part.<br><br>All of your answers will remain confidential, they will not be sent to Clarivate, aTyr, or FSR. Only you can see your answers and they will not be saved anywhere.</center></p>
+        <form id="survey-form">
+            <div id="q1" class="form-group">
+                <label>1) How old are you?</label>
+                <input type="radio" name="q1" value="continue" onclick="showNextQuestion('q1', 'q2')"> 18 years or older<br>
+                <input type="radio" name="q1" value="screen-out" onclick="screenOut('Unfortunately you are not eligible to take part in this study.<br><br> If you have time, please let Clarivate know that you were not eligible due to <u>your age</u>.<br><br> We are sorry that you can\'t take part this time.')"> 17 years or younger
+            </div>
+            <div id="q2" class="form-group hidden">
+                <label>2) Where do you live?</label>
+                <input type="radio" name="q2" value="continue" onclick="showNextQuestion('q2', 'q3')"> USA<br>
+                <input type="radio" name="q2" value="screen-out" onclick="screenOut('Unfortunately you are not eligible to take part in this study. <br><br>If you have time, please let Clarivate know that you were not eligible due to <u>where you live</u>.<br><br> We are sorry that you can\'t take part this time.')"> Another country
+            </div>
+            <div id="q3" class="form-group hidden">
+                <label>3) Do you have a confirmed diagnosis of pulmonary sarcoidosis?</label>
+                <input type="radio" name="q3" value="continue" onclick="showNextQuestion('q3', 'q4')"> Yes<br>
+                <input type="radio" name="q3" value="screen-out" onclick="screenOut('Unfortunately you are not eligible to take part in this study.<br><br> If you have time, please let Clarivate know that you were not eligible <u>as you have not been diagnosed with pulmonary sarcoidosis</u>. <br><br>We are sorry that you can\'t take part this time.')"> No
+            </div>
+            <div id="q4" class="form-group hidden">
+                <label>4) When were you diagnosed with pulmonary sarcoidosis?</label>
+                <input type="radio" name="q4" value="screen-out" onclick="screenOut('Unfortunately you are not eligible to take part in this study. <br><br>If you have time, please let Clarivate know that you were not eligible <u>because you were diagnosed less than 6 months ago</u>. <br><br>We are sorry that you can\'t take part this time.')"> Within the past 6 months<br>
+                <input type="radio" name="q4" value="continue" onclick="showNextQuestion('q4', 'q5')"> Over 6 months ago
+            </div>
+            <div id="q5" class="form-group hidden">
+                <label>5) Did you have a biopsy that confirmed your pulmonary sarcoidosis?</label>
+                <input type="radio" name="q5" value="continue" onclick="showNextQuestion('q5', 'q6')"> Yes<br>
+                <input type="radio" name="q5" value="screen-out" onclick="screenOut('Unfortunately you are not eligible to take part in this study. <br><br>If you have time, please let Clarivate know that you were not eligible <u>because you have not had a biopsy</u>. <br><br>We are sorry that you can\'t take part this time.')"> No
+            </div>
+            <div id="q6" class="form-group hidden">
+                <label>6) Are you currently being treated with oral corticosteroids (e.g. prednisone)?</label>
+                <input type="radio" name="q6" value="continue" onclick="showNextQuestion('q6', 'q7')"> Yes<br>
+                <input type="radio" name="q6" value="screen-out" onclick="screenOut('Unfortunately you are not eligible to take part in this study.<br><br> If you have time, please let Clarivate know that you were not eligible <u>because you are not currently being treated with oral corticosteroids</u>. <br><br>We are sorry that you can\'t take part this time.')"> No
+            </div>
+            <div id="q7" class="form-group hidden">
+                <label>7) Can you provide evidence of your diagnosis and treatment? We need to be able to check the following points:</label>
+                <ul>
+                    <li>That you have been diagnosed with pulmonary sarcoidosis</li>
+                    <li>That you were diagnosed at least 6 months ago</li>
+                    <li>That you are currently receiving treatment with an oral corticosteroid</li>
+                </ul>
+                <p>There are a few types of evidence you could send to us. This could be a screenshot of your medical portal, a photo of your prescription, or a letter from your doctor. We can also give you a form for you to take to your doctor, for them to sign.</p>
+                <input type="radio" name="q7" value="continue" onclick="showNextQuestion('q7', 'q8')"> Yes, I can provide evidence of all three points.<br>
+                <input type="radio" name="q7" value="screen-out" onclick="screenOut('Unfortunately you are not eligible to take part in this study. <br><br>If you have time, please let Clarivate know that you were not eligible <u>because you cannot provide proof of diagnosis/treatment</u>.<br><br> We are sorry that you can\'t take part this time.')"> No, I can’t provide evidence.
+            </div>
+                       <div id="q8" class="form-group hidden">
+                <label>8) Which of these options best describes how you experience breathlessness?</label><br>
+                <input type="radio" name="q8" value="screen-out" onclick="screenOut('Unfortunately you are not eligible to take part in this study. <br><br>If you have time, please let Clarivate know that you were not eligible due to <u>your MCR score</u>.<br><br> We are sorry that you can\'t take part this time.')"> I only get breathless with strenuous exercise<br><br>
+                <input type="radio" name="q8" value="continue" onclick="showNextQuestion('q8', 'q9')"> I get short of breath when hurrying on level ground or walking up a slight hill<br><br>
+                <input type="radio" name="q8" value="continue" onclick="showNextQuestion('q8', 'q9')"> On level ground, I walk slower than people of my age because of breathlessness, or I have to stop for breath when walking at my own pace on the level ground<br><br>
+                <input type="radio" name="q8" value="continue" onclick="showNextQuestion('q8', 'q9')"> I stop for breath after walking about 100 yards or after a few minutes on level ground<br><br>
+                <input type="radio" name="q8" value="continue" onclick="showNextQuestion('q8', 'q9')"> I am too breathless to leave the house or I am breathless when dressing/undressing
+            </div>
+            <div id="q9" class="form-group hidden">
+                <label>9) Please read each question carefully and answer by selecting the response that best applies to you. Please answer ALL questions as honestly as you can. This questionnaire is confidential. <br><br>All questions relate to how SARCOIDOSIS has affected your health.<br><br> In the last 2 weeks...</label>
+                <p><b>My cough has caused pain/discomfort</b></p>
+                <input type="radio" name="q9a" value="0"> All of the time<br>
+                <input type="radio" name="q9a" value="1"> Most of the time<br>
+                <input type="radio" name="q9a" value="2"> A lot of the time<br>
+                <input type="radio" name="q9a" value="3"> Some of the time<br>
+                <input type="radio" name="q9a" value="4"> A little of the time<br>
+                <input type="radio" name="q9a" value="4"> Hardly any of the time<br>
+                <input type="radio" name="q9a" value="5"> None of the time
+
+                <p><b>I have been breathless climbing stairs or walking up slight inclines</b></p>
+                <input type="radio" name="q9b" value="0"> All of the time<br>
+                <input type="radio" name="q9b" value="1"> Most of the time<br>
+                <input type="radio" name="q9b" value="2"> A lot of the time<br>
+                <input type="radio" name="q9b" value="3"> Some of the time<br>
+                <input type="radio" name="q9b" value="4"> A little of the time<br>
+                <input type="radio" name="q9b" value="5"> Hardly any of the time<br>
+                <input type="radio" name="q9b" value="6"> None of the time
+
+                <p><b>I have had to take deep breaths, also known as ‘air hunger’</b></p>
+                <input type="radio" name="q9c" value="0"> All of the time<br>
+                <input type="radio" name="q9c" value="1"> Most of the time<br>
+                <input type="radio" name="q9c" value="2"> A lot of the time<br>
+                <input type="radio" name="q9c" value="3"> Some of the time<br>
+                <input type="radio" name="q9c" value="4"> A little of the time<br>
+                <input type="radio" name="q9c" value="5"> Hardly any of the time<br>
+                <input type="radio" name="q9c" value="6"> None of the time
+
+                <p><b>My chest has felt tight</b></p>
+                <input type="radio" name="q9d" value="0"> All of the time<br>
+                <input type="radio" name="q9d" value="1"> Most of the time<br>
+                <input type="radio" name="q9d" value="2"> A lot of the time<br>
+                <input type="radio" name="q9d" value="3"> Some of the time<br>
+                <input type="radio" name="q9d" value="4"> A little of the time<br>
+                <input type="radio" name="q9d" value="5"> Hardly any of the time<br>
+                <input type="radio" name="q9d" value="6"> None of the time
+
+                <p><b>I have had episodes of breathlessness</b></p>
+                <input type="radio" name="q9e" value="0"> All of the time<br>
+                <input type="radio" name="q9e" value="1"> Most of the time<br>
+                <input type="radio" name="q9e" value="2"> A lot of the time<br>
+                <input type="radio" name="q9e" value="3"> Some of the time<br>
+                <input type="radio" name="q9e" value="4"> A little of the time<br>
+                <input type="radio" name="q9e" value="5"> Hardly any of the time<br>
+                <input type="radio" name="q9e" value="6"> None of the time
+
+                <p><b>I have experienced chest pains</b></p>
+                <input type="radio" name="q9f" value="0"> All of the time<br>
+                <input type="radio" name="q9f" value="1"> Most of the time<br>
+                <input type="radio" name="q9f" value="2"> A lot of the time<br>
+                <input type="radio" name="q9f" value="3"> Some of the time<br>
+                <input type="radio" name="q9f" value="4"> A little of the time<br>
+                <input type="radio" name="q9f" value="4"> Hardly any of the time<br>
+                <input type="radio" name="q9f" value="5"> None of the time
+                <br><br><button type="button" onclick="checkEligibility()">Next</button>
+            </div>
+            <div id="q10" class="form-group hidden">
+                <label>10) Are you willing to take part in a one-on-one interview that lasts 60 minutes? <br><br>You will need to use Microsoft Teams on your computer, laptop, or tablet, using your own internet connection. We can help you to use Microsoft Teams. <br><br>Please note that a smartphone will not be suitable for this interview.</label>
+                <input type="radio" name="q10" value="continue" onclick="showNextQuestion('q10', 'q11')"> Yes, I can join a 60-minute meeting on Microsoft Teams using my computer, laptop, or tablet.<br><br>
+                <input type="radio" name="q10" value="screen-out" onclick="screenOut('Unfortunately you are not eligible to take part in this study. <br><br>If you have time, please let Clarivate know that you were not eligible <u>because you cannot join an online interview</u>. <br><br>We are sorry that you can\'t take part this time.')"> No
+            </div>
+            <div id="q11" class="form-group hidden">
+                <label>11) Can you read, write, and speak English fluently?</label>
+                <input type="radio" name="q11" value="continue" onclick="showNextQuestion('q11', 'q12')"> Yes<br>
+                <input type="radio" name="q11" value="screen-out" onclick="screenOut('Unfortunately you are not eligible to take part in this study.<br><br> If you have time, please let Clarivate know that you were not eligible <u>because you do not speak English fluently</u>. <br><br>We are sorry that you can\'t take part this time.')"> No
+            </div>
+            <div id="q12" class="form-group hidden">
+                <label>12) Are you willing and able to provide written informed consent?</label>
+                <input type="radio" name="q12" value="eligible" onclick="eligibleToParticipate()"> Yes<br>
+                              <input type="radio" name="q12" value="screen-out" onclick="screenOut('Unfortunately you are not eligible to take part in this study. <br><br>If you have time, please let Clarivate know that you were not eligible <u>because you are not willing to provide written informed consent</u>. <br><br>We are sorry that you can\'t take part this time.')"> No
+            </div>
+        </form>
+        <div id="screen-out-message" class="hidden screen-out-message">
+            <p><b>Unfortunately you are not eligible to take part in this study. Thank you for your interest.</b></p>
+        </div>
+        <div id="eligible-message" class="hidden eligible-message">
+            <p><b>You appear to be eligible for this study! Please email back the Clarivate team, and we will let you know what to do next.</b></p>
+        </div>
+    </div>
+</body>
+</html>
