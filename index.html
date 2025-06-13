@@ -78,7 +78,7 @@
             if (totalScore >= 6 && totalScore <= 33) {
                 showNextQuestion('q9', 'q10');
             } else {
-                screenOut("Unfortunately you are not eligible to take part in this study.<br><br> If you have time, please let Clarivate know that you were not eligible due to <u>your KSQ-L score</u>.<br><br> We are sorry that you can't take part this time.");
+                screenOut("Unfortunately you are not eligible to take part in this study.<br><br> If you have time, please let Clarivate know that you were not eligible due to <u>your KSQ-L score</u>. Please contact Clarivate on <a href='mailto:PSstudy@clarivate.com'>PSstudy@clarivate.com</a> to tell them the reason you were not eligible to take part.<br><br> We are sorry that you can't take part this time.");
             }
         }
     </script>
@@ -91,32 +91,32 @@
             <div id="q1" class="form-group">
                 <label>1) How old are you?</label>
                 <input type="radio" name="q1" value="continue" onclick="showNextQuestion('q1', 'q2')"> 18 years or older<br>
-                <input type="radio" name="q1" value="screen-out" onclick="screenOut('Unfortunately you are not eligible to take part in this study.<br><br> If you have time, please let Clarivate know that you were not eligible due to <u>your age</u>.<br><br> We are sorry that you can\'t take part this time.')"> 17 years or younger
+                <input type="radio" name="q1" value="screen-out" onclick="screenOut('Unfortunately you are not eligible to take part in this study.<br><br> If you have time, please let Clarivate know that you were not eligible due to <u>your age</u>. Please contact Clarivate on <a href=\'mailto:PSstudy@clarivate.com\'>PSstudy@clarivate.com</a> to tell them the reason you were not eligible to take part.<br><br> We are sorry that you can\'t take part this time.')"> 17 years or younger
             </div>
             <div id="q2" class="form-group hidden">
                 <label>2) Where do you live?</label>
                 <input type="radio" name="q2" value="continue" onclick="showNextQuestion('q2', 'q3')"> USA<br>
-                <input type="radio" name="q2" value="screen-out" onclick="screenOut('Unfortunately you are not eligible to take part in this study. <br><br>If you have time, please let Clarivate know that you were not eligible due to <u>where you live</u>.<br><br> We are sorry that you can\'t take part this time.')"> Another country
+                <input type="radio" name="q2" value="screen-out" onclick="screenOut('Unfortunately you are not eligible to take part in this study. <br><br>If you have time, please let Clarivate know that you were not eligible due to <u>where you live</u>. Please contact Clarivate on <a href=\'mailto:PSstudy@clarivate.com\'>PSstudy@clarivate.com</a> to tell them the reason you were not eligible to take part. <br><br> We are sorry that you can\'t take part this time.')"> Another country
             </div>
             <div id="q3" class="form-group hidden">
                 <label>3) Do you have a confirmed diagnosis of pulmonary sarcoidosis?</label>
                 <input type="radio" name="q3" value="continue" onclick="showNextQuestion('q3', 'q4')"> Yes<br>
-                <input type="radio" name="q3" value="screen-out" onclick="screenOut('Unfortunately you are not eligible to take part in this study.<br><br> If you have time, please let Clarivate know that you were not eligible <u>as you have not been diagnosed with pulmonary sarcoidosis</u>. <br><br>We are sorry that you can\'t take part this time.')"> No
+                <input type="radio" name="q3" value="screen-out" onclick="screenOut('Unfortunately you are not eligible to take part in this study.<br><br> If you have time, please let Clarivate know that you were not eligible <u>as you have not been diagnosed with pulmonary sarcoidosis</u>. Please contact Clarivate on <a href=\'mailto:PSstudy@clarivate.com\'>PSstudy@clarivate.com</a> to tell them the reason you were not eligible to take part. <br><br>We are sorry that you can\'t take part this time.')"> No
             </div>
             <div id="q4" class="form-group hidden">
                 <label>4) When were you diagnosed with pulmonary sarcoidosis?</label>
-                <input type="radio" name="q4" value="screen-out" onclick="screenOut('Unfortunately you are not eligible to take part in this study. <br><br>If you have time, please let Clarivate know that you were not eligible <u>because you were diagnosed less than 6 months ago</u>. <br><br>We are sorry that you can\'t take part this time.')"> Within the past 6 months<br>
+                <input type="radio" name="q4" value="screen-out" onclick="screenOut('Unfortunately you are not eligible to take part in this study. <br><br>If you have time, please let Clarivate know that you were not eligible <u>because you were diagnosed less than 6 months ago</u>. Please contact Clarivate on <a href=\'mailto:PSstudy@clarivate.com\'>PSstudy@clarivate.com</a> to tell them the reason you were not eligible to take part. <br><br>We are sorry that you can\'t take part this time.')"> Within the past 6 months<br>
                 <input type="radio" name="q4" value="continue" onclick="showNextQuestion('q4', 'q5')"> Over 6 months ago
             </div>
             <div id="q5" class="form-group hidden">
                 <label>5) Did you have a biopsy that confirmed your pulmonary sarcoidosis?</label>
                 <input type="radio" name="q5" value="continue" onclick="showNextQuestion('q5', 'q6')"> Yes<br>
-                <input type="radio" name="q5" value="screen-out" onclick="screenOut('Unfortunately you are not eligible to take part in this study. <br><br>If you have time, please let Clarivate know that you were not eligible <u>because you have not had a biopsy</u>. <br><br>We are sorry that you can\'t take part this time.')"> No
+                <input type="radio" name="q5" value="screen-out" onclick="screenOut('Unfortunately you are not eligible to take part in this study. <br><br>If you have time, please let Clarivate know that you were not eligible <u>because you have not had a biopsy</u>. Please contact Clarivate on <a href=\'mailto:PSstudy@clarivate.com\'>PSstudy@clarivate.com</a> to tell them the reason you were not eligible to take part. <br><br>We are sorry that you can\'t take part this time. ')"> No
             </div>
             <div id="q6" class="form-group hidden">
                 <label>6) Are you currently being treated with oral corticosteroids (e.g. prednisone)?</label>
                 <input type="radio" name="q6" value="continue" onclick="showNextQuestion('q6', 'q7')"> Yes<br>
-                <input type="radio" name="q6" value="screen-out" onclick="screenOut('Unfortunately you are not eligible to take part in this study.<br><br> If you have time, please let Clarivate know that you were not eligible <u>because you are not currently being treated with oral corticosteroids</u>. <br><br>We are sorry that you can\'t take part this time.')"> No
+                <input type="radio" name="q6" value="screen-out" onclick="screenOut('Unfortunately you are not eligible to take part in this study.<br><br> If you have time, please let Clarivate know that you were not eligible <u>because you are not currently being treated with oral corticosteroids</u>. Please contact Clarivate on <a href=\'mailto:PSstudy@clarivate.com\'>PSstudy@clarivate.com</a> to tell them the reason you were not eligible to take part. <br><br>We are sorry that you can\'t take part this time.')"> No
             </div>
             <div id="q7" class="form-group hidden">
                 <label>7) Can you provide evidence of your diagnosis and treatment? We need to be able to check the following points:</label>
@@ -127,11 +127,11 @@
                 </ul>
                 <p>There are a few types of evidence you could send to us. This could be a screenshot of your medical portal, a photo of your prescription, or a letter from your doctor. We can also give you a form for you to take to your doctor, for them to sign.</p>
                 <input type="radio" name="q7" value="continue" onclick="showNextQuestion('q7', 'q8')"> Yes, I can provide evidence of all three points.<br>
-                <input type="radio" name="q7" value="screen-out" onclick="screenOut('Unfortunately you are not eligible to take part in this study. <br><br>If you have time, please let Clarivate know that you were not eligible <u>because you cannot provide proof of diagnosis/treatment</u>.<br><br> We are sorry that you can\'t take part this time.')"> No, I can’t provide evidence.
+                <input type="radio" name="q7" value="screen-out" onclick="screenOut('Unfortunately you are not eligible to take part in this study. <br><br>If you have time, please let Clarivate know that you were not eligible <u>because you cannot provide proof of diagnosis/treatment</u>. Please contact Clarivate on <a href=\'mailto:PSstudy@clarivate.com\'>PSstudy@clarivate.com</a> to tell them the reason you were not eligible to take part. <br><br> We are sorry that you can\'t take part this time. ')"> No, I can’t provide evidence.
             </div>
                        <div id="q8" class="form-group hidden">
                 <label>8) Which of these options best describes how you experience breathlessness?</label><br>
-                <input type="radio" name="q8" value="screen-out" onclick="screenOut('Unfortunately you are not eligible to take part in this study. <br><br>If you have time, please let Clarivate know that you were not eligible due to <u>your MCR score</u>.<br><br> We are sorry that you can\'t take part this time.')"> I only get breathless with strenuous exercise<br><br>
+                <input type="radio" name="q8" value="screen-out" onclick="screenOut('Unfortunately you are not eligible to take part in this study. <br><br>If you have time, please let Clarivate know that you were not eligible due to <u>your MRC score</u>. Please contact Clarivate on <a href=\'mailto:PSstudy@clarivate.com\'>PSstudy@clarivate.com</a> to tell them the reason you were not eligible to take part. <br><br> We are sorry that you can\'t take part this time. ')"> I only get breathless with strenuous exercise<br><br>
                 <input type="radio" name="q8" value="continue" onclick="showNextQuestion('q8', 'q9')"> I get short of breath when hurrying on level ground or walking up a slight hill<br><br>
                 <input type="radio" name="q8" value="continue" onclick="showNextQuestion('q8', 'q9')"> On level ground, I walk slower than people of my age because of breathlessness, or I have to stop for breath when walking at my own pace on the level ground<br><br>
                 <input type="radio" name="q8" value="continue" onclick="showNextQuestion('q8', 'q9')"> I stop for breath after walking about 100 yards or after a few minutes on level ground<br><br>
@@ -197,24 +197,24 @@
             <div id="q10" class="form-group hidden">
                 <label>10) Are you willing to take part in a one-on-one interview that lasts 60 minutes? <br><br>You will need to use Microsoft Teams on your computer, laptop, or tablet, using your own internet connection. We can help you to use Microsoft Teams. <br><br>Please note that a smartphone will not be suitable for this interview.</label>
                 <input type="radio" name="q10" value="continue" onclick="showNextQuestion('q10', 'q11')"> Yes, I can join a 60-minute meeting on Microsoft Teams using my computer, laptop, or tablet.<br><br>
-                <input type="radio" name="q10" value="screen-out" onclick="screenOut('Unfortunately you are not eligible to take part in this study. <br><br>If you have time, please let Clarivate know that you were not eligible <u>because you cannot join an online interview</u>. <br><br>We are sorry that you can\'t take part this time.')"> No
+                <input type="radio" name="q10" value="screen-out" onclick="screenOut('Unfortunately you are not eligible to take part in this study. <br><br>If you have time, please let Clarivate know that you were not eligible <u>because you cannot join an online interview</u>. Please contact Clarivate on <a href=\'mailto:PSstudy@clarivate.com\'>PSstudy@clarivate.com</a> to tell them the reason you were not eligible to take part. <br><br>We are sorry that you can\'t take part this time. ')"> No
             </div>
             <div id="q11" class="form-group hidden">
                 <label>11) Can you read, write, and speak English fluently?</label>
                 <input type="radio" name="q11" value="continue" onclick="showNextQuestion('q11', 'q12')"> Yes<br>
-                <input type="radio" name="q11" value="screen-out" onclick="screenOut('Unfortunately you are not eligible to take part in this study.<br><br> If you have time, please let Clarivate know that you were not eligible <u>because you do not speak English fluently</u>. <br><br>We are sorry that you can\'t take part this time.')"> No
+                <input type="radio" name="q11" value="screen-out" onclick="screenOut('Unfortunately you are not eligible to take part in this study.<br><br> If you have time, please let Clarivate know that you were not eligible <u>because you do not speak English fluently</u>. Please contact Clarivate on <a href=\'mailto:PSstudy@clarivate.com\'>PSstudy@clarivate.com</a> to tell them the reason you were not eligible to take part. <br><br>We are sorry that you can\'t take part this time. ')"> No
             </div>
             <div id="q12" class="form-group hidden">
                 <label>12) Are you willing and able to provide written informed consent?</label>
                 <input type="radio" name="q12" value="eligible" onclick="eligibleToParticipate()"> Yes<br>
-                              <input type="radio" name="q12" value="screen-out" onclick="screenOut('Unfortunately you are not eligible to take part in this study. <br><br>If you have time, please let Clarivate know that you were not eligible <u>because you are not willing to provide written informed consent</u>. <br><br>We are sorry that you can\'t take part this time.')"> No
+                              <input type="radio" name="q12" value="screen-out" onclick="screenOut('Unfortunately you are not eligible to take part in this study. <br><br>If you have time, please let Clarivate know that you were not eligible <u>because you are not willing to provide written informed consent</u>. Please contact Clarivate on <a href=\'mailto:PSstudy@clarivate.com\'>PSstudy@clarivate.com</a> to tell them the reason you were not eligible to take part. <br><br>We are sorry that you can\'t take part this time.')"> No
             </div>
         </form>
         <div id="screen-out-message" class="hidden screen-out-message">
-            <p><b>Unfortunately you are not eligible to take part in this study. Thank you for your interest.</b></p>
+            <p><b>Unfortunately you are not eligible to take part in this study. Thank you for your interest. Please contact Clarivate on <a href='mailto:PSstudy@clarivate.com'>PSstudy@clarivate.com</a> to tell them the reason you were not eligible to take part.</b></p>
         </div>
         <div id="eligible-message" class="hidden eligible-message">
-            <p><b>You appear to be eligible for this study! Please email back the Clarivate team, and we will let you know what to do next.</b></p>
+            <p><b>You appear to be eligible for this study! Please email back the Clarivate team, and we will let you know what to do next. Please contact Clarivate on <a href='mailto:PSstudy@clarivate.com'>PSstudy@clarivate.com</a> to tell them that you were eligible to take part.</b></p>
         </div>
     </div>
 </body>
