@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -81,10 +80,28 @@
                 screenOut("Unfortunately you are not eligible to take part in this study.<br><br> If you have time, please let Clarivate know that you were not eligible due to <u>your KSQ-L score</u>. Please contact Clarivate on <a href='mailto:PSstudy@clarivate.com'>PSstudy@clarivate.com</a> to tell them the reason you were not eligible to take part.<br><br> We are sorry that you can't take part this time.");
             }
         }
+
+        function startSurvey() {
+            document.getElementById("intro").classList.add("hidden");
+            document.getElementById("survey-container").classList.remove("hidden");
+        }
     </script>
 </head>
 <body>
-    <div class="container">
+    <div id="intro">
+        <h2>Pulmonary Sarcoidosis Interview Study</h2>
+        <p>Thank you for your interest in participating in the <b>”Pulmonary Sarcoidosis Interview Study”</b>!<br> Please read the information below to find out more about this research study.</p><br>
+        <b>What are the aims of this study?</b>
+        <p>In this study, you will be asked about your unique experience with pulmonary sarcoidosis. The aim is to better understand what it is like for you to live with pulmonary sarcoidosis, for example any symptoms that you experience, and any impacts the condition has on how you feel and function.</p><br>
+        <b>What will I be asked to do?</b>
+        <p>We are speaking with individuals like you, who have been diagnosed with pulmonary sarcoidosis, to gather valuable insights. This is an interview study where researchers will ask questions that are designed to explore your experience living with pulmonary sarcoidosis and collect data for future clinical trials. You will be asked to participate in a single, 60-minute, audio-recorded interview with the study team from your computer or tablet. You will be compensated for your time.</p><br>
+        <p>If you have any questions about the study, please feel free to contact the research team via email at <a href="mailto:PSstudy@clarivate.com">PSstudy@clarivate.com</a>.</p><br>
+        <p>Before you consent to participate and schedule your interview, we need to ask you a few brief questions to assess your eligibility for participation.</p><br>
+		<p>Please click the “NEXT” button below to proceed.</p>
+        <button onclick="startSurvey()">Next</button>
+    </div>
+
+    <div class="container hidden" id="survey-container">
         <h2><center>Pulmonary Sarcoidosis Interview Study: Screener</center></h2>
         <p><center>Thank you for your interest in our study!<br> Please complete the questions below to find out if you are eligible to take part.<br><br>All of your answers will remain confidential, they will not be sent to Clarivate, aTyr, or FSR. Only you can see your answers and they will not be saved anywhere.</center></p>
         <form id="survey-form">
